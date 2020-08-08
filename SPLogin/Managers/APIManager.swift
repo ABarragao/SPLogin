@@ -78,47 +78,55 @@ struct APIManager {
     func getMe(completion: @escaping (wsError?,User?)->()){
         
         if !ReachabilityManager.shared.isReachable{
-            completion(.noInternet, nil)
-            return
-        }
-        
-        guard let token = UserDefaults.standard.getToken() else{
-            completion(.missingToken, nil)
-            return
-        }
-        
-        guard let url = URL.init(string: baseUrl + "/me?token=\(token)") else{
-            completion(.urlError, nil)
-            return
-        }
-        
-        var urlRequest = URLRequest.init(url: url)
-        urlRequest.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-          if let error = error {
-            completion(.apiError, nil)
-            print("Error with login: \(error)")
-            return
-          }
-            
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(DateFormatter.apiFormat)
-            
-            if let data = data,
-                let user = try? decoder.decode(User.self, from: data){
-                DispatchQueue.main.async {
-                    UserEntity.insert(user)
-                    CoreDataManager.shared.saveContext()
+            CoreDataManager.shared.getUser { (user) in
+                if user != nil {
                     completion(nil, user)
                 }
+                else{
+                    completion(.noInternet, nil)
+                }
             }
-            else{
-                completion(.parsingError, nil)
-            }
-
         }
-        task.resume()
+        else{
+            
+            guard let token = UserDefaults.standard.getToken() else{
+                completion(.missingToken, nil)
+                return
+            }
+            
+            guard let url = URL.init(string: baseUrl + "/me?token=\(token)") else{
+                completion(.urlError, nil)
+                return
+            }
+            
+            var urlRequest = URLRequest.init(url: url)
+            urlRequest.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+                if let error = error {
+                    completion(.apiError, nil)
+                    print("Error with login: \(error)")
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.apiFormat)
+                
+                if let data = data,
+                    let user = try? decoder.decode(User.self, from: data){
+                    DispatchQueue.main.async {
+                        UserEntity.insert(user)
+                        CoreDataManager.shared.saveContext()
+                        completion(nil, user)
+                    }
+                }
+                else{
+                    completion(.parsingError, nil)
+                }
+                
+            }
+            task.resume()
+        }
         
     }
     

@@ -40,7 +40,11 @@ struct CoreDataManager {
         request.returnsObjectsAsFaults = false
         do {
             let result = try self.context.fetch(request)
-            if let userEntity = result.first as? UserEntity {
+            if let userEntity = result.first as? UserEntity,
+                let user = User.decode(userEntity.getData()){
+                completion(user)
+            }
+            else{
                 completion(nil)
             }
             

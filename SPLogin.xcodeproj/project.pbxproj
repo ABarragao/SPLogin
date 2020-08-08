@@ -37,6 +37,7 @@
 		3695112024DE980900916EFF /* NotificationCenter+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695111F24DE980900916EFF /* NotificationCenter+AddOns.swift */; };
 		3695112324DEA03200916EFF /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3695112224DEA03200916EFF /* LoaderView.xib */; };
 		3695112524DEA11F00916EFF /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695112424DEA11F00916EFF /* LoaderView.swift */; };
+		3695112724DEBFCA00916EFF /* NSManagedObject+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695112624DEBFCA00916EFF /* NSManagedObject+AddOns.swift */; };
 		36A0B6FD24D882F30036F782 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0B6FB24D882F30036F782 /* ProfileViewController.swift */; };
 		36A0B6FE24D882F30036F782 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A0B6FC24D882F30036F782 /* ProfileViewController.xib */; };
 		36A0B70024D885390036F782 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0B6FF24D885390036F782 /* User.swift */; };
@@ -80,6 +81,7 @@
 		3695111F24DE980900916EFF /* NotificationCenter+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+AddOns.swift"; sourceTree = "<group>"; };
 		3695112224DEA03200916EFF /* LoaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
 		3695112424DEA11F00916EFF /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		3695112624DEBFCA00916EFF /* NSManagedObject+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+AddOns.swift"; sourceTree = "<group>"; };
 		36A0B6FB24D882F30036F782 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		36A0B6FC24D882F30036F782 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		36A0B6FF24D885390036F782 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				367CABA524DD955E00157DEC /* UIButton+AddOns.swift */,
 				3695111D24DE939800916EFF /* UIAlertController+AddOns.swift */,
 				3695111F24DE980900916EFF /* NotificationCenter+AddOns.swift */,
+				3695112624DEBFCA00916EFF /* NSManagedObject+AddOns.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				36EA943424DC577B005871C9 /* FeedbackView.swift in Sources */,
 				36A0B70224D887510036F782 /* DateFormatter+AddOns.swift in Sources */,
 				362A023124DC1EEA00F52BF6 /* SubView.swift in Sources */,
+				3695112724DEBFCA00916EFF /* NSManagedObject+AddOns.swift in Sources */,
 				362A022024DC016600F52BF6 /* SPLabel.swift in Sources */,
 				3695112024DE980900916EFF /* NotificationCenter+AddOns.swift in Sources */,
 				362A022D24DC1D5000F52BF6 /* SPView.swift in Sources */,

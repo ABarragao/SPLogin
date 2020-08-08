@@ -10,18 +10,12 @@ import Foundation
 
 struct User: Codable {
     let email, firstname, lastname, phone: String?
-    let admin, customer: Bool?
     let shortName: String?
     let id: Int?
     let address: Address?
     let gender: String?
     let birthdayDate: Date?
-    let status: String?
-    let hasToSignContract, hasToRenewContract: Bool?
-    let state: String?
-    let interviewedAtDate: Date?
     let kpi: KPI?
-    let hasAssurance: Bool?
 
     var completeName: String{
         if let lastName = self.lastname, let firstName = self.firstname {
@@ -38,17 +32,21 @@ struct User: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case email, firstname, lastname, phone, admin, customer
+        case email, firstname, lastname, phone
         case shortName = "short_name"
         case id, address, gender
         case birthdayDate = "birthday_date"
-        case status
-        case hasToSignContract = "has_to_sign_contract"
-        case hasToRenewContract = "has_to_renew_contract"
-        case state
-        case interviewedAtDate = "interviewed_at_date"
         case kpi
-        case hasAssurance = "has_assurance"
+    }
+    
+    static func decode(_ data: Data?) -> User?{
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.apiFormat)
+                
+        guard let data = data else{
+            return nil
+        }
+        return try? decoder.decode(User.self, from: data)
     }
 }
 
@@ -83,7 +81,6 @@ struct GeoPoint: Codable {
 struct KPI: Codable {
     let reactivenessPercentage, feedbackAverage, id, countJobsDone: Int?
     let countJobsBackup, countYellowCard: Int?
-    let dateFirstJob: Date?
 
     enum CodingKeys: String, CodingKey {
         case reactivenessPercentage = "reactiveness_percentage"
@@ -92,6 +89,5 @@ struct KPI: Codable {
         case countJobsDone = "count_jobs_done"
         case countJobsBackup = "count_jobs_backup"
         case countYellowCard = "count_yellow_card"
-        case dateFirstJob = "date_first_job"
     }
 }
