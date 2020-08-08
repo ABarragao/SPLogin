@@ -59,11 +59,6 @@
                 <constraint firstAttribute="trailing" secondItem="uX4-VZ-YIm" secondAttribute="trailing" constant="10" id="yYJ-rr-6gt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="backColor">
-                    <integer key="value" value="1"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-12.318840579710146" y="-0.33482142857142855"/>
         </view>
     </objects>

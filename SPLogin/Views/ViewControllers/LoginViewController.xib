@@ -117,10 +117,11 @@
                 <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrk-yi-MST" customClass="LoaderView" customModule="SPLogin" customModuleProvider="target">
                     <rect key="frame" x="167" y="413" width="80" height="80"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="8dg-ja-Ox5"/>
+                        <constraint firstAttribute="height" constant="80" id="oGE-Kf-PLV"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="backColor">
                             <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>

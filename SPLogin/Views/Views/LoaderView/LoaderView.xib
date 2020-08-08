@@ -17,19 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="r97-G9-B4K">
-                    <rect key="frame" x="30" y="30" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="dZN-Wm-CXN"/>
-                        <constraint firstAttribute="height" constant="20" id="liV-9d-nPj"/>
-                    </constraints>
+                    <rect key="frame" x="21.5" y="21.5" width="37" height="37"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="r97-G9-B4K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="4st-Wb-2F6"/>
-                <constraint firstItem="r97-G9-B4K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="JDT-pS-hZn"/>
-                <constraint firstAttribute="bottom" secondItem="r97-G9-B4K" secondAttribute="bottom" constant="30" id="N5N-y7-VVA"/>
-                <constraint firstAttribute="trailing" secondItem="r97-G9-B4K" secondAttribute="trailing" constant="30" id="bNA-z2-COi"/>
+                <constraint firstItem="r97-G9-B4K" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E61-Ky-0oD"/>
+                <constraint firstItem="r97-G9-B4K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ye0-dH-I4r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="176.81159420289856" y="239.73214285714283"/>

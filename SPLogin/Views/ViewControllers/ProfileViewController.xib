@@ -140,15 +140,6 @@
                                 <constraint firstItem="JhZ-p1-lHu" firstAttribute="top" secondItem="lSn-pu-xCk" secondAttribute="bottom" constant="3" id="zJo-EO-1jo"/>
                                 <constraint firstAttribute="trailing" secondItem="2G4-4H-8bI" secondAttribute="trailing" constant="17" id="zk5-be-5jU"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="backColor">
-                                    <integer key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="0.0"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZNh-p4-ceW">
                             <rect key="frame" x="0.0" y="203" width="375" height="324"/>
@@ -180,9 +171,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="gradientColor">
-                                                            <integer key="value" value="0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
@@ -286,6 +274,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKc-NK-hHh" customClass="LoaderView" customModule="SPLogin" customModuleProvider="target">
                     <rect key="frame" x="147.5" y="50" width="80" height="80"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="HOK-g8-r71"/>
+                        <constraint firstAttribute="width" constant="80" id="xCe-Ki-0he"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
