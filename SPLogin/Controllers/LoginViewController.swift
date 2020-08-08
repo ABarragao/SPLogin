@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
         setUpView()
     }
     
+    //MARK: UpdateUI
     private func setUpView(){
         self.loginBtn.backgroundColor = Theme.secondaryColor
         self.loginBtn.setTitle("login.cta".localized(), for: .normal)
@@ -56,6 +57,7 @@ class LoginViewController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    //MARK: Action
     @IBAction func loginAction(_ sender: Any) {
         
         self.passwordTxtField.resignFirstResponder()
@@ -86,6 +88,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //MARK: Error
     private func showNoInternetAlert(){
         let alert = UIAlertController.getNoInternetAlert()
         self.present(alert, animated: true, completion: nil)
@@ -116,6 +119,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //MARK: Loader
     private func startLoading(){
         DispatchQueue.main.async {
             self.view.isUserInteractionEnabled = false

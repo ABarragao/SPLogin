@@ -115,8 +115,7 @@ struct APIManager {
                 if let data = data,
                     let user = try? decoder.decode(User.self, from: data){
                     DispatchQueue.main.async {
-                        UserEntity.insert(user)
-                        CoreDataManager.shared.saveContext()
+                        CoreDataManager.shared.saveUser(user)
                         completion(nil, user)
                     }
                 }

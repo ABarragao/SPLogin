@@ -23,7 +23,16 @@
         <attribute name="reactiveness_percentage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="kpi" inverseEntity="UserEntity"/>
     </entity>
-    <entity name="UserEntity" representedClassName=".UserEntity" syncable="YES">
+    <entity name="PictureEntity" representedClassName=".PictureEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="data" attributeType="Binary"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="userId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="UserEntity" representedClassName=".UserEntity" syncable="YES" codeGenerationType="category">
         <attribute name="birthday_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="firstname" optional="YES" attributeType="String"/>
@@ -45,5 +54,6 @@
         <element name="GeoPointEntity" positionX="292.59375" positionY="195.9375" width="128" height="88"/>
         <element name="KPIEntity" positionX="16.38671875" positionY="330.734375" width="128" height="148"/>
         <element name="UserEntity" positionX="-160.69921875" positionY="-55.34375" width="128" height="193"/>
+        <element name="PictureEntity" positionX="45" positionY="99" width="128" height="73"/>
     </elements>
 </model>

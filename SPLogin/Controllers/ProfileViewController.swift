@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var pictureTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dashboardStackView: UIStackView!
+    @IBOutlet weak var pictureShadow: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var loaderContainer: LoaderView!
     @IBOutlet weak var feedbackView: FeedbackView!
@@ -34,12 +35,18 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var reactivnessSubview: SubView!
     @IBOutlet weak var yellowCardSubview: SubView!
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.getToken() != nil {
             self.getUserInfos()
         }
         setUpView()
+        addTapGesturePicture()
+        setPicture()
         NotificationCenter.default.registerToReachability(observer: self, selector: #selector(getUserWithLogout))
     }
 
@@ -56,12 +63,16 @@ class ProfileViewController: UIViewController {
     @objc func getUserWithLogout(){
         self.startLoading()
         if UserDefaults.standard.getToken() != nil {
-            APIManager.shared.getMe { (error, user) in
+            APIManager.shared.getMe { [weak self] (error, user) in
+                guard self != nil else{
+                    return
+                }
+                
                 if user != nil{
-                    self.user = user
+                    self!.user = user
                 }
                 else{
-                    self.logout(nil)
+                    self!.logout(nil)
                 }
             }
         }
@@ -79,6 +90,8 @@ class ProfileViewController: UIViewController {
             self.locationButton.imageView?.contentMode = .scaleAspectFit
             self.headerView.addShadow()
             self.headerView.backgroundColor = Theme.secondaryColor
+            self.pictureShadow.layer.cornerRadius = self.pictureImageView.layer.cornerRadius
+            self.pictureShadow.addShadow()
             let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
             let topAreaHeight = keyWindow?.safeAreaInsets.top ?? 0
             self.buttonTopConstraint.constant += topAreaHeight
@@ -141,10 +154,58 @@ class ProfileViewController: UIViewController {
             self.loaderContainer.alpha = 0
         }
     }
+    
+    //MARK: Icons
+    private func setPicture(){
+        guard let userId = self.user?.id else {
+            return
+        }
+        CoreDataManager.shared.getPicture(userId: userId, completion: { (_ ,data) in
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.pictureImageView.image = UIImage.init(data: data!)
+                }
+            }
+        })
+    }
+    
+    private func addTapGesturePicture(){
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pictureTapped))
+        self.pictureImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func pictureTapped(){
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
 }
 
 extension ProfileViewController: LoginDelegate{
     func userDidLog(_ user:User) {
         self.user = user
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+        let selectedImage : UIImage = image
+        self.pictureImageView.image = selectedImage
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+            if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                self.pictureImageView.image = selectedImage
+                
+                if let imageData = selectedImage.pngData(){
+                    CoreDataManager.shared.savePicture(imageData, userId: self.user!.id!)
+                }
+            }
+        }
     }
 }

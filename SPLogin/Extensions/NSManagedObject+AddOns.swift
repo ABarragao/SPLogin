@@ -16,7 +16,9 @@ extension NSManagedObject{
                 if let date = value as? Date{
                    value = DateFormatter.apiFormat.string(from: date)
                 }
-                dict[attribute.key] = value
+                if !((value as? Data) != nil) {
+                    dict[attribute.key] = value
+                }
             }
         }
         

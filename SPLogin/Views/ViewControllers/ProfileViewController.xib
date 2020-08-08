@@ -20,6 +20,7 @@
                 <outlet property="locationButton" destination="JnZ-Dw-iSe" id="e4p-8f-b2d"/>
                 <outlet property="nameLabel" destination="lSn-pu-xCk" id="bO8-0K-qxG"/>
                 <outlet property="pictureImageView" destination="lGX-WA-sWq" id="Qw4-E9-mFy"/>
+                <outlet property="pictureShadow" destination="sng-gU-gkW" id="tjL-Nd-0Jw"/>
                 <outlet property="pictureTopConstraint" destination="9aP-QZ-QjS" id="5u7-Nf-UjO"/>
                 <outlet property="reactivnessSubview" destination="z0R-KP-O4i" id="z5w-Ps-vNE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,16 +38,20 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH8-Y6-Pu7">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-WA-sWq">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sng-gU-gkW">
                                     <rect key="frame" x="137.5" y="16" width="100" height="100"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-WA-sWq">
+                                    <rect key="frame" x="137.5" y="16" width="100" height="100"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="RNZ-L3-wcU"/>
                                         <constraint firstAttribute="height" constant="100" id="n1b-0C-GZK"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="25"/>
+                                            <integer key="value" value="50"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
@@ -123,11 +128,15 @@
                                 <constraint firstItem="JnZ-Dw-iSe" firstAttribute="centerY" secondItem="JhZ-p1-lHu" secondAttribute="centerY" id="UKM-zO-dyg"/>
                                 <constraint firstItem="2G4-4H-8bI" firstAttribute="top" secondItem="pH8-Y6-Pu7" secondAttribute="top" constant="8" id="Zfv-TI-PMV"/>
                                 <constraint firstItem="lSn-pu-xCk" firstAttribute="centerX" secondItem="pH8-Y6-Pu7" secondAttribute="centerX" id="ZhK-5X-Sh5"/>
+                                <constraint firstItem="sng-gU-gkW" firstAttribute="trailing" secondItem="lGX-WA-sWq" secondAttribute="trailing" id="a57-3k-y1l"/>
                                 <constraint firstItem="JnZ-Dw-iSe" firstAttribute="leading" secondItem="JhZ-p1-lHu" secondAttribute="leading" constant="-32" id="fxd-Jl-w2T"/>
                                 <constraint firstItem="JnZ-Dw-iSe" firstAttribute="trailing" secondItem="JhZ-p1-lHu" secondAttribute="trailing" id="isy-I0-AFg"/>
                                 <constraint firstItem="lSn-pu-xCk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pH8-Y6-Pu7" secondAttribute="leading" constant="30" id="kgY-wl-phv"/>
+                                <constraint firstItem="sng-gU-gkW" firstAttribute="leading" secondItem="lGX-WA-sWq" secondAttribute="leading" id="pLD-ma-H2K"/>
                                 <constraint firstItem="JnZ-Dw-iSe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pH8-Y6-Pu7" secondAttribute="leading" constant="30" id="sTc-Jv-6PA"/>
                                 <constraint firstItem="lGX-WA-sWq" firstAttribute="centerX" secondItem="pH8-Y6-Pu7" secondAttribute="centerX" id="spe-3z-tZY"/>
+                                <constraint firstItem="sng-gU-gkW" firstAttribute="bottom" secondItem="lGX-WA-sWq" secondAttribute="bottom" id="vfN-YG-1hM"/>
+                                <constraint firstItem="sng-gU-gkW" firstAttribute="top" secondItem="lGX-WA-sWq" secondAttribute="top" id="z2t-Ps-fyt"/>
                                 <constraint firstItem="JhZ-p1-lHu" firstAttribute="top" secondItem="lSn-pu-xCk" secondAttribute="bottom" constant="3" id="zJo-EO-1jo"/>
                                 <constraint firstAttribute="trailing" secondItem="2G4-4H-8bI" secondAttribute="trailing" constant="17" id="zk5-be-5jU"/>
                             </constraints>

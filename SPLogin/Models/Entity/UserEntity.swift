@@ -103,3 +103,22 @@ class KPIEntity: NSManagedObject {
         self.setValue(kpi.countYellowCard, forKeyPath: "count_yellow_card")
     }
 }
+
+class PictureEntity: NSManagedObject {
+    
+    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+    }
+    
+    
+    static func insert(_ data:Data, userId:Int){
+        let context = CoreDataManager.shared.context
+        let entityName = "PictureEntity"
+        let entityDesc = NSEntityDescription.entity(forEntityName: entityName,
+                                                    in: context)!
+        let newPicture = NSManagedObject(entity: entityDesc, insertInto: context)
+        
+        newPicture.setValue(data, forKeyPath: "data")
+        newPicture.setValue(userId, forKey: "userId")
+    }
+}
