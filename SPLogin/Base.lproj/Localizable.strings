@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  SPLogin
+
+  Created by Arnaud Barragao on 06/08/2020.
+  Copyright © 2020 abarragao. All rights reserved.
+*/
+
+"login.title" = "Welcome !";
+"login.username" = "Email";
+"login.password" = "Password";
+"login.cta" = "Login";
+"login.error" = "Bad email or password";
+"profile.dashboard" = "Dashboard";
+"profile.feedback" = "Feedback average";
+"profile.jobs" = "Jobs done";
+"profile.backup" = "Backup";
+"profile.yellow.cards" = "Yellow cards";
+"profile.reactivness" = "Reactivness";
+"reachability.error" = "No internet connection. Datas may be wrong";
+"reachability.alert.title" = "Error internet";
+"reachability.alert.message" = "Internet is not reachable";
+"reachability.alert.button" = "OK";

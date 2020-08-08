@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  SPLogin
+
+  Created by Arnaud Barragao on 06/08/2020.
+  Copyright © 2020 abarragao. All rights reserved.
+*/
+
+"login.title" = "Bienvenue !";
+"login.username" = "Email";
+"login.password" = "Mot de passe";
+"login.cta" = "Se connecter";
+"login.error" = "Mauvais email ou mot de passe";
+"profile.dashboard" = "Tableau de bord";
+"profile.feedback" = "Moyenne avis";
+"profile.jobs" = "Jobs réalisés";
+"profile.backup" = "Backup";
+"profile.yellow.cards" = "Carton jaunes";
+"profile.reactivness" = "Réactivité";
+"reachability.error" = "Pas de connexion internet. Les données sont peut-être fausses";
+"reachability.alert.title" = "Erreur internet";
+"reachability.alert.message" = "Internet ne peut pas être atteint";
+"reachability.alert.button" = "Continuer";

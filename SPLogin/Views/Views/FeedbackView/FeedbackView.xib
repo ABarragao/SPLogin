@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedbackView">
+            <connections>
+                <outlet property="starsStackView" destination="5Xh-FD-ckL" id="X5d-Ya-Qqu"/>
+                <outlet property="subview" destination="NES-b8-mm3" id="Mg0-7t-VCx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="25" translatesAutoresizingMaskIntoConstraints="NO" id="NES-b8-mm3" customClass="SubView" customModule="SPLogin" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="backColor">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="profile.feedback"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Xh-FD-ckL">
+                    <rect key="frame" x="320" y="25.5" width="132" height="24"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" highlightedImage="star_full" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-oR-zOU">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Bad-J8-UXm"/>
+                                <constraint firstAttribute="width" constant="24" id="Qvj-iL-PHy"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" highlightedImage="star_full" translatesAutoresizingMaskIntoConstraints="NO" id="yf4-30-52f">
+                            <rect key="frame" x="27" y="0.0" width="24" height="24"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" highlightedImage="star_full" translatesAutoresizingMaskIntoConstraints="NO" id="Qr4-2S-m5O">
+                            <rect key="frame" x="54" y="0.0" width="24" height="24"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" highlightedImage="star_full" translatesAutoresizingMaskIntoConstraints="NO" id="u3a-MX-QaH">
+                            <rect key="frame" x="81" y="0.0" width="24" height="24"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_empty" highlightedImage="star_full" translatesAutoresizingMaskIntoConstraints="NO" id="5iE-vp-m1S">
+                            <rect key="frame" x="108" y="0.0" width="24" height="24"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="NES-b8-mm3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="05a-Q0-SM5"/>
+                <constraint firstAttribute="trailing" secondItem="5Xh-FD-ckL" secondAttribute="trailing" constant="10" id="2fe-jA-AOb"/>
+                <constraint firstAttribute="bottom" secondItem="NES-b8-mm3" secondAttribute="bottom" id="6Oh-u4-xA9"/>
+                <constraint firstItem="5Xh-FD-ckL" firstAttribute="centerY" secondItem="NES-b8-mm3" secondAttribute="centerY" id="Ed7-nx-0LA"/>
+                <constraint firstItem="NES-b8-mm3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GQM-WC-BZH"/>
+                <constraint firstItem="5Xh-FD-ckL" firstAttribute="leading" secondItem="NES-b8-mm3" secondAttribute="trailing" id="PXp-la-EPm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="172.46376811594203" y="409.15178571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star_empty" width="32" height="32"/>
+        <image name="star_full" width="32" height="32"/>
+    </resources>
+</document>

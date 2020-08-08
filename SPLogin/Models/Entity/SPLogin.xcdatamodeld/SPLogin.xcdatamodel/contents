@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AddressEntity" representedClassName=".AddressEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="street" optional="YES" attributeType="String"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
+        <relationship name="geoPoint" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="GeoPointEntity" inverseName="address" inverseEntity="GeoPointEntity"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="address" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="GeoPointEntity" representedClassName=".GeoPointEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AddressEntity" inverseName="geoPoint" inverseEntity="AddressEntity"/>
+    </entity>
+    <entity name="KPIEntity" representedClassName=".KPIEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="feedbackAvg" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="firstJobDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="jobsBackUp" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="jobsDone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reactivnessPrctg" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="yellowCard" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="kpi" inverseEntity="UserEntity"/>
+    </entity>
+    <entity name="UserEntity" representedClassName=".UserEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="admin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="customer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="hasAssurance" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasToRenewContract" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasToSignContract" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="interviewedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="AddressEntity" inverseName="user" inverseEntity="AddressEntity"/>
+        <relationship name="kpi" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="KPIEntity" inverseName="user" inverseEntity="KPIEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="AddressEntity" positionX="55.20703125" positionY="4.625" width="128" height="133"/>
+        <element name="GeoPointEntity" positionX="292.59375" positionY="195.9375" width="128" height="88"/>
+        <element name="KPIEntity" positionX="16.38671875" positionY="330.734375" width="128" height="163"/>
+        <element name="UserEntity" positionX="-160.69921875" positionY="-55.34375" width="128" height="313"/>
+    </elements>
+</model>
