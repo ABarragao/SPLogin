@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var errorBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var pictureTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var dashboardStackView: UIStackView!
@@ -47,7 +48,8 @@ class ProfileViewController: UIViewController {
         setUpView()
         addTapGesturePicture()
         setPicture()
-        NotificationCenter.default.registerToReachability(observer: self, selector: #selector(getUserWithLogout))
+        NotificationCenter.default.registerToReachability(observer: self, selector: #selector(internetIsReachable))
+        NotificationCenter.default.registerToNoReachability(observer: self, selector: #selector(showError))
     }
 
     //MARK: getUserInfos
@@ -60,7 +62,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @objc func getUserWithLogout(){
+    @objc func internetIsReachable(){
+        self.hideError()
         self.startLoading()
         if UserDefaults.standard.getToken() != nil {
             APIManager.shared.getMe { [weak self] (error, user) in
@@ -179,6 +182,25 @@ class ProfileViewController: UIViewController {
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    //MARK: Error
+    @objc func showError(){
+        DispatchQueue.main.async {
+            self.errorBottomConstraint.constant = 0
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    func hideError(){
+        DispatchQueue.main.async {
+            self.errorBottomConstraint.constant = -200
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }
 

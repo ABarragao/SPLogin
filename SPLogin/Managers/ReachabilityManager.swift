@@ -34,6 +34,7 @@ class ReachabilityManager: NSObject{
             NotificationCenter.default.sendReachabilityNotif()
         } else {
             isReachable = false
+            NotificationCenter.default.sendNoReachabilityNotif()
         }
     }
 }

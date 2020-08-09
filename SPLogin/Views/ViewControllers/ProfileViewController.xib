@@ -13,6 +13,7 @@
                 <outlet property="backupSubview" destination="3lt-lR-eKW" id="aR7-aB-urW"/>
                 <outlet property="buttonTopConstraint" destination="Zfv-TI-PMV" id="maf-BG-2Hr"/>
                 <outlet property="dashboardStackView" destination="ZNh-p4-ceW" id="TJ0-lT-fNc"/>
+                <outlet property="errorBottomConstraint" destination="hKI-ar-VJ9" id="NTM-iW-QZy"/>
                 <outlet property="feedbackView" destination="J08-rO-R6D" id="4GG-Qm-aT0"/>
                 <outlet property="headerView" destination="pH8-Y6-Pu7" id="cmW-ZV-BBx"/>
                 <outlet property="jobsSubview" destination="oSG-QB-fLV" id="FaY-uR-H6X"/>
@@ -287,12 +288,26 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIp-Ib-tGU" customClass="ErrorView" customModule="SPLogin" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="827" width="375" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="backColor">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="reachability.error"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="AIp-Ib-tGU" secondAttribute="trailing" id="2Bx-g7-S0C"/>
                 <constraint firstItem="LSS-P9-Qew" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Fg-9T-AeY"/>
                 <constraint firstItem="mKc-NK-hHh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Ki0-rZ-6ak"/>
+                <constraint firstItem="AIp-Ib-tGU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Nxm-v8-ejb"/>
+                <constraint firstItem="AIp-Ib-tGU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xz7-Dr-vVg"/>
                 <constraint firstAttribute="trailing" secondItem="LSS-P9-Qew" secondAttribute="trailing" id="gqn-m3-AgV"/>
+                <constraint firstAttribute="bottom" secondItem="AIp-Ib-tGU" secondAttribute="bottom" constant="-200" id="hKI-ar-VJ9"/>
                 <constraint firstAttribute="bottom" secondItem="LSS-P9-Qew" secondAttribute="bottom" id="s4r-gC-cv0"/>
                 <constraint firstItem="LSS-P9-Qew" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wZm-DZ-zhm"/>
                 <constraint firstItem="mKc-NK-hHh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zFR-cs-U20"/>

@@ -152,6 +152,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="login.error"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>

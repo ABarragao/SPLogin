@@ -12,5 +12,11 @@ import UIKit
 class ErrorView: SPView {
 
     @IBOutlet weak var label: SPLabel!
+    
+    @IBInspectable var text: String = ""{
+        didSet{
+            self.label?.text = self.text.localized()
+        }
+    }
 
 }
