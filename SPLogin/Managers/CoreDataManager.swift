@@ -107,18 +107,12 @@ struct CoreDataManager {
     }
     
     //MARK: Delete
+    //Comme l'image n'est pas stocké via l'api on ne la suppr pas de l'app.
     func deleteAllData() {
         self.getUserEntity {(userEntity) in
             if userEntity != nil {
                 self.context.delete(userEntity!)
             }
-        }
-        
-        //Comme l'image n'est pas stocké dans via l'api on ne la suppr pas de l'app.
-//        self.getPicture{ (pictureEntity, _) in
-//            if pictureEntity != nil {
-//                self.context.delete(pictureEntity!)
-//            }
-//        }
+        }        
     }
 }

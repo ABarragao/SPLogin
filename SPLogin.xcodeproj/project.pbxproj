@@ -31,7 +31,6 @@
 		368AE12424D71F3000A4AF45 /* Dictionary+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AE12324D71F3000A4AF45 /* Dictionary+AddOns.swift */; };
 		368AE12624D7228700A4AF45 /* UserDefaults+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368AE12524D7228700A4AF45 /* UserDefaults+AddOns.swift */; };
 		36900CE424DABA950006BC3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36900CE324DABA950006BC3E /* Theme.swift */; };
-		36900CEB24DACF990006BC3E /* UIImage+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36900CEA24DACF990006BC3E /* UIImage+AddOns.swift */; };
 		3695111C24DE922A00916EFF /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695111B24DE922A00916EFF /* ReachabilityManager.swift */; };
 		3695111E24DE939800916EFF /* UIAlertController+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695111D24DE939800916EFF /* UIAlertController+AddOns.swift */; };
 		3695112024DE980900916EFF /* NotificationCenter+AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3695111F24DE980900916EFF /* NotificationCenter+AddOns.swift */; };
@@ -75,7 +74,6 @@
 		368AE12324D71F3000A4AF45 /* Dictionary+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+AddOns.swift"; sourceTree = "<group>"; };
 		368AE12524D7228700A4AF45 /* UserDefaults+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AddOns.swift"; sourceTree = "<group>"; };
 		36900CE324DABA950006BC3E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		36900CEA24DACF990006BC3E /* UIImage+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AddOns.swift"; sourceTree = "<group>"; };
 		3695111B24DE922A00916EFF /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		3695111D24DE939800916EFF /* UIAlertController+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AddOns.swift"; sourceTree = "<group>"; };
 		3695111F24DE980900916EFF /* NotificationCenter+AddOns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+AddOns.swift"; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				368AE12324D71F3000A4AF45 /* Dictionary+AddOns.swift */,
 				368AE12524D7228700A4AF45 /* UserDefaults+AddOns.swift */,
 				36A0B70124D887510036F782 /* DateFormatter+AddOns.swift */,
-				36900CEA24DACF990006BC3E /* UIImage+AddOns.swift */,
 				365015B124DC86440006CCDF /* UIView+AddOns.swift */,
 				3667F56024DD7C0400EC05CB /* String+AddOns.swift */,
 				367CABA524DD955E00157DEC /* UIButton+AddOns.swift */,
@@ -443,7 +440,6 @@
 				36A0B6FD24D882F30036F782 /* ProfileViewController.swift in Sources */,
 				36A0B70424D89A4B0036F782 /* UserEntity.swift in Sources */,
 				368AE10224D7117500A4AF45 /* SceneDelegate.swift in Sources */,
-				36900CEB24DACF990006BC3E /* UIImage+AddOns.swift in Sources */,
 				36A0B70024D885390036F782 /* User.swift in Sources */,
 				3695112524DEA11F00916EFF /* LoaderView.swift in Sources */,
 				3695111C24DE922A00916EFF /* ReachabilityManager.swift in Sources */,

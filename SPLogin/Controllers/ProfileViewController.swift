@@ -189,10 +189,6 @@ extension ProfileViewController: LoginDelegate{
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-        let selectedImage : UIImage = image
-        self.pictureImageView.image = selectedImage
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
