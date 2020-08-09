@@ -202,6 +202,11 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: Status bar
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 }
 
 extension ProfileViewController: LoginDelegate{

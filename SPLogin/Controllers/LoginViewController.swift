@@ -140,6 +140,11 @@ class LoginViewController: UIViewController {
             self.loaderContainer.alpha = 0
         }
     }
+    
+    //MARK: Status bar
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 }
 
 extension LoginViewController : UITextFieldDelegate{
